@@ -19,14 +19,17 @@ html {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
+
 .grid {
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
 }
+
 .grid__full-width {
   width: 100%;
 }
+
 .grid__row {
   display: flex;
   flex-wrap: wrap;
@@ -100,15 +103,18 @@ html {
 .btn.btn--normal:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
 .btn.btn--size-s {
   height: 36px;
   font-size: 1.2rem;
   padding: 0 8px;
 }
+
 .btn.btn--primary {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+
 .btn.btn--disabled {
   color: #949494;
   cursor: default;
