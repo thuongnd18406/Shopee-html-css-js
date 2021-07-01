@@ -408,17 +408,29 @@
   text-align: center;
 }
 
-.header__cart-wrap{
+.header__cart-wrap {
   position: relative;
   display: inline-block;
   padding: 0 12px;
   cursor: pointer;
 }
 
-.header__cart-wrap:hover .header__cart-list{
+.header__cart-wrap:hover .header__cart-list {
   display: block;
 }
 
+.header__cart-notice {
+  position: absolute;
+  padding: 1px 7px;
+  top: -4px;
+  right: -4px;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  border-radius: 10px;
+  border: 2px solid #ee4d2d;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
 
 .header__cart-icon {
   color: var(--white-color);
@@ -427,16 +439,17 @@
 }
 
 .header__cart-list::after {
-content: "";
-position: absolute;
-right: 4px;
-top: -30px;
-border-width: 20px;
-border-style: solid;
-border-color: transparent transparent var(--white-color) transparent;
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 4px;
+  border-width: 20px;
+  border-style: solid;
+  cursor: pointer;
+  border-color: transparent transparent var(--white-color) transparent;
 }
 
-.header__cart-list{
+.header__cart-list {
   position: absolute;
   top: calc(100% + 8px);
   right: 0px;
@@ -444,26 +457,129 @@ border-color: transparent transparent var(--white-color) transparent;
   width: 400px;
   border-radius: 2px;
   box-shadow: 0 2px 10px #ccc;
-  display: none;
   animation: fadeIn ease-in 0.2s;
+  cursor: default;
+  display: none;
 }
 
-
-.header__cart-list--no-cart{
+.header__cart-list--no-cart {
   padding: 28px 0;
 }
 
-.header__cart-list--no-cart-img{
-  width: 60%;
-
+.header__cart-list--no-cart .header__cart-list--no-cart-img,
+.header__cart-list--no-cart .header__cart-list--no-cart-msg {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.header__cart-list--no-cart-msg{
-  display: block;
+.header__cart-list--no-cart-img {
+  width: 60%;
+  display: none;
+}
+
+.header__cart-list--no-cart-msg {
+  display: none;
+  /* display: block; */
   font-size: 1.4rem;
   margin-top: 14px;
   color: var(--text-color);
+}
 
+/* Cart list item */
+.header__cart-heading {
+  text-align: left;
+  margin: 12px 0 8px 12px;
+  font-size: 1.4rem;
+  color: #999;
+  font-weight: 500;
+}
+.header__cart-list-item {
+  padding-left: 0;
+  list-style: none;
+}
+
+.header__cart-item {
+  display: flex;
+  /* ảnh và info lên cùng hàng ngang */
+  align-items: center
+  ;
+}
+
+.header__cart-item:hover {
+background-color: #f8f8f8;
+}
+.header__cart-img {
+  width: 42px;
+  height: 42px;
+  margin: 12px;
+  border: 1 solid #e8e8e8;
+}
+
+.header__cart-item-info {
+  width: 100%;
+  margin-right: 12px;
+}
+
+
+
+.header__cart-item-head {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  justify-content: space-between;
+}
+
+.header__cart-item-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.header__cart-item-price {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.header__cart-item-multiply {
+  font-size: 0.9rem;
+  margin: 0 4px;
+  color: #757575;
+}
+
+.header__cart-item-quantity {
+  font-size: 1.2rem;
+  color: #757575;
+}
+
+.header__cart-item-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__cart-item-description {
+  color: #757575;
+  font-size: 1.2rem;
+}
+
+.header__cart-item-remove {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.header__cart-item-remove:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.header__cart-view-cart {
+  float: right;
+  margin: 0 12px 12px 0;
+}
+.header__cart-view-cart:hover {
+  background-color: #F05D41;
 }
 
 /* Header search */
@@ -589,10 +705,9 @@ border-color: transparent transparent var(--white-color) transparent;
   display: inline-block;
 }
 
-.header__search-input:focus ~ .header__search-history{
+.header__search-input:focus ~ .header__search-history {
   display: block;
 }
-
 
 /* Search history */
 .header__search-history {
@@ -619,24 +734,21 @@ border-color: transparent transparent var(--white-color) transparent;
   padding-left: 0;
   list-style: none;
   margin: 6px 0 0;
-  
 }
 
 .header__search-history-item {
   height: 38px;
   padding: 0 12px;
-
 }
 
 .header__search-history-item:hover {
-background-color: #fafafa;
+  background-color: #fafafa;
 }
 
-.header__search-history-item a{
+.header__search-history-item a {
   text-decoration: none;
   font-size: 1.4rem;
   line-height: 38px;
   color: var(--text-color);
   display: block;
 }
-
